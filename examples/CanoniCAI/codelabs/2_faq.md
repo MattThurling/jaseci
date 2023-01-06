@@ -11,6 +11,14 @@ We will be using the list of FAQs from https://www.tesla.com/en_SG/support/faq.
 >
 > This architecture works for any FAQ topics and use cases. Feel free to pick another product/website/company's FAQ if you'd like!
 
+<hr>
+<hr>
+
+*Would be helpful here to say how you're going to build up a file from scratch. Get them to create their faq.jac file so they can type along from the start*
+
+<hr>
+<hr>
+
 ## Define the Nodes
 
 We have 3 different types of nodes:
@@ -146,9 +154,25 @@ This is the first walker we have introduced, so let's break it down.
 Now, let's run the init walker to initialize the graph.
 First put all of the above code snippet into a single jac file and name it `faq.jac`, including
 
+<hr>
+<hr>
+
+*It's confusing to talk about creating the file here. See above - they should create faq.jac earlier*
+
+<hr>
+<hr>
+
 - nodes definition
 - graph definition
 - init walker
+
+<hr>
+<hr>
+
+*You could include a code block of what the entire file should look like at this point*
+
+<hr>
+<hr>
 
 Run `jsctl` to get into the jaseci shell environment:
 
@@ -182,6 +206,14 @@ strict digraph root {
     "n1" -> "n3" [ id="a609e7b54bde4a6a9c9711afdb123241", label="e3" ]
 }
 ```
+
+<hr>
+<hr>
+
+*My output didn't have the ids*
+
+<hr>
+<hr>
 
 > **Note**
 >
@@ -250,6 +282,14 @@ jaseci > jac run faq.jac
 
 `jac run` functions very similarly to `jac dot`, with the only difference being that it doesn't return the graph in DOT format.
 Try giving it one of the three questions we have predefined and it should respond with the corresponding answer.
+
+<hr>
+<hr>
+
+*This is kinda confusing. Although behind the scenes they may be similar, from the user perspective they are very different as 'run' allows you to interact*
+
+<hr>
+<hr>
 
 ## Introducing Universal Sentence Encoder
 
@@ -347,6 +387,14 @@ An example knowledge base file look like this
 Save the above json in a file named `tesla_faq.json` and make sure it is in the same location as `faq.jac`.
 Let's now update the `init` walker.
 Because we are going to use the `ingest_faq` walker to generate the graph, we won't need the static graph definition.
+
+<hr>
+<hr>
+
+*This tripped me up. I wasn't sure if I was supposed to completely delete the definition*
+
+<hr>
+<hr>
 
 ```jac
 walker init {

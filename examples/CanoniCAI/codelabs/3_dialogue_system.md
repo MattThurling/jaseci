@@ -18,9 +18,20 @@ And that is what we are going to build in this section -- a multi-turn action-or
 >
 > Create a new jac file (`dialogue.jac`) before moving forward. We will keep this program separate from the FAQ one we built. But, KEEP the FAQ jac file around, we will integrate these two systems into one unified conversational AI system later.
 
+
+
 ## State Graph
 Let's first go over the graph architecture for the dialogue system.
 Put all the code so far in a new file and name it `dialogue.jac`.
+
+<hr>
+<hr>
+
+*I got really confused here. Do you want me to create a new empty file called dialogue.jac in the same folder as faq.jac? Or do you want me to paste the contents of faq.jac into dialogue.jac? I think the former but it's not clear*
+
+<hr>
+<hr>
+
 We will be building a state graph.
 In a state graph, each node is a conversational state, which represents a possible user state during a dialgoue.
 The state nodes are connected with transition edges, which encode the condition required to hop from one state to another state.
@@ -225,6 +236,14 @@ By default, the model is trained for 50 epochs.
 
 If the training successfully finishes, you should see `"success": true` at the end.
 
+<hr>
+<hr>
+
+*I got some errors and success: false but it seemed to work anyway*
+
+<hr>
+<hr>
+
 Now that the model has finished training, let's try it out!
 You can use the `infer` walker to play with the model and test it out! `infer` is short for inference, which means using a trained model to run prediction on a given input.
 
@@ -261,6 +280,14 @@ Similarly, you can load a saved model with `load_model`
 ```bash
 jaseci > jac run bi_enc.jac -walk load_model -ctx "{\"model_path\": \"dialogue_intent_model\"}"
 ```
+
+<hr>
+<hr>
+
+*Let them know they will (may) need to load the models when starting a new session of jsctl. Also, when I got to the production phase I had problems with unloaded models and didn't know when/where/how to load them. This should be explained somewhere, not necessarily here*
+
+<hr>
+<hr>
 
 Always remember to save your trained models!
 
@@ -762,4 +789,12 @@ Re-train the bi-encoder model with this dataset.
 Now try running the walker again with `jac run dialogue.jac`!
 
 Congratulations! You now have a fully functional multi-turn dialogue system that can handle test drive requests!
+
+<hr>
+<hr>
+
+*Phew! The guide is good but might be better split into steps*
+
+<hr>
+<hr>
 

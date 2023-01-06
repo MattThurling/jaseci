@@ -28,6 +28,11 @@ If the command above displays the help menu for `jsctl`, then you have successfu
 
 Please refer to [Key Abstractions and Concepts](lang_docs/key_concepts.md) for the key new concepts in a nutshell. These will make more sense as you go through this guide.
 
+<hr>
+> Could
+<hr>
+
+
 ### Graph, nodes, edges
 
 Refer to [Graphs](lang_docs/graphs.md) for more.

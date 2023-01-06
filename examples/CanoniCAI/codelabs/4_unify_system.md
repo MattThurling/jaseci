@@ -66,6 +66,14 @@ jaseci > jac build main.jac
 If the compilation is successful, a `.jir` file with the same name will be generated (in this case, `main.jir`).
 `jir` file can be used with `jac run` or `jac dot` the same way as the `jac` source code file.
 
+<hr>
+<hr>
+
+*I got really confused here. Did you want me to work with a main.jac file and import the other two files into it? And the whole jac vs jir explanation can go somewhere else to avoid confusion*
+
+<hr>
+<hr>
+
 > **Note**
 >
 > The `jir` format is what you will use to deploy your jac program to a production jaseci instance.
@@ -194,6 +202,14 @@ As mentioned before, if the compiliation succeedd, a `tesla_ai.jir` will be gene
 >
 > Run into issues at this build step? First check if all the imports are set up correctly.
 
+<hr>
+<hr>
+
+*If I remember correctly, I was able to build but got runtime errors about not being able to spawn the faq node. And again you're talking about jacs and jirs when what I want to know is should I be building / running main.whatever or tesla_ai.whatever*
+
+<hr>
+<hr>
+
 Running a `jir` is just like running a `jac` file
 ```jac
 jaseci > jac run tesla_ai.jir
@@ -201,6 +217,14 @@ jaseci > jac run tesla_ai.jir
 
 One last step, since we introduce a new intent `i have a questions`, we need to update our classifier model again.
 This time, use the `clf_train_3.json` example training data.
+
+<hr>
+<hr>
+
+*I assume the training is cumulative, that each training file adds to the model*
+
+<hr>
+<hr>
 
 > **Note**
 > Make sure so save your model again so you can return to it in a new seesion!

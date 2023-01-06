@@ -11,6 +11,15 @@ This context retention is done on a per-user basis.
 To learn more about `yield,` refer to the relevant sections of the Jaseci Bible.
 
 In the case of our conversational AI system, it is essential for our walker to remember the context information gained from previous interactions with the same user.
+
+<hr>
+<hr>
+
+*I found it confusing to have the concept of users introduced here. One thing at a time, either yield and the steps to running as a server, or the idea of per-user context, otherwise it's too much*
+
+<hr>
+<hr>
+
 So let's update our walker with `yield.`
 
 ```jac
@@ -61,6 +70,15 @@ Two new syntax here:
 It is the abstraction Jaseci uses to encapsulate compiled walkers and architype nodes and edges.
 The key operation with respesct to `sentinel` is "register" a sentinel.
 You can think of registering a `sentinel` as a compiling your jac program.
+
+<hr>
+<hr>
+
+*For me, it felt like I was 'compiling' jacs into jirs so the idea of 'registering' the jac is weird. Need the explanation of sentinels Jason gave during our call*
+
+<hr>
+<hr>
+
 The walkers of a given sentinel can then be invoked and run on arbitrary nodes of any graph.
 
 Let's register our jac program
@@ -117,6 +135,14 @@ And with `yield`, the next walker run will pick up where it leaves off and retai
 ## Tests
 Just like any program, a set of automatic tests cases with robust coverage is essential to the success of the program through development to production.
 Jac has built-in tests support and here is how you create a test case in jac.
+
+<hr>
+<hr>
+
+*Could tests be covered after we've got the thing working?*
+
+<hr>
+<hr>
 
 ```jac
 import {*} with "tesla_ai.jac";
