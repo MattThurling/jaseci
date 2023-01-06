@@ -7,6 +7,14 @@ apt-get install python3.10-dev python3-pip git g++ build-essential pkg-config cm
 
 To install jaseci, run this in your development environment:
 
+<hr>
+<hr>
+
+*I had some problems here with Python versions. Would help to have very brief statement of requirements, ie compatible Python and pip versions and a link to a preferred source of Python support for noobs like me*
+
+<hr>
+<hr>
+
 ```
 pip install jaseci
 ```
@@ -29,7 +37,11 @@ If the command above displays the help menu for `jsctl`, then you have successfu
 Please refer to [Key Abstractions and Concepts](lang_docs/key_concepts.md) for the key new concepts in a nutshell. These will make more sense as you go through this guide.
 
 <hr>
-> Could
+<hr>
+
+*Could these concepts be summarised here rather than referring me to the Bible?*
+
+<hr>
 <hr>
 
 
