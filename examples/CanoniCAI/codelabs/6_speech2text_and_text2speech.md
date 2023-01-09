@@ -10,6 +10,14 @@ The process of converting spoken words into written text is called speech to tex
 
 Before work with the Jaseci `stt` module make sure to install fmmeg via `sudo apt-get install ffmpeg`. And load the jaseci `stt` module via `actions load module jaseci_ai_kit.stt`.
 
+<hr>
+<hr>
+
+*Will this work on Mac? I installed ffmpeg using this guide https://bbc.github.io/bbcat-orchestration-docs/installation-mac-manual/ but got errors.*
+
+<hr>
+<hr>
+
 **Transcribe**
 
 The specified audio's written transcript will be returned by `stt.transcribe` action. The audio can be provided as a mp3 file, a list of amplitude values (array), the URL to the audio(mp3) file.
