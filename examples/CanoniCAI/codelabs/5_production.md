@@ -104,6 +104,14 @@ Once a sentinel is registered, you can update its jac program with
 jaseci > sentinel set -snt SENTINEL_ID -mode ir tesla_ai.jir
 ```
 
+<hr>
+<hr>
+
+*As mentioned, if I am thinking of a jir as a compiled jac, it's confusing to update a sentinel's jac program*
+
+<hr>
+<hr>
+
 To get the sentinel ID, you can run one of the two following commands
 ```bash
 jaseci > sentinel get
@@ -130,6 +138,15 @@ With a sentinel and graph, we can now run walker with
 ```bash
 jaseci > walker run talk -ctx "{\"question\": \"I want to schedule a test drive\"}"
 ```
+
+<hr>
+<hr>
+
+*I ran into problems here with the 'interactive' mode. I didn't know how to pass the mode as an argument so had to hack it in the jac file to still be able to run the jac.
+
+<hr>
+<hr>
+
 And with `yield`, the next walker run will pick up where it leaves off and retain its variable states and nodes traversal plan.
 
 ## Tests
@@ -184,6 +201,15 @@ jsserv makemigrations base
 jsserv makemigrations
 jsserv migrate
 ```
+
+<hr>
+<hr>
+
+*I got some error messages about 'File does not exist'. Didn't seem to have any effect but not good for confidence*
+
+<hr>
+<hr>
+
 The above commands essentially initializes the database schemas.
 
 > **Important**
@@ -265,7 +291,8 @@ After registering, you can then run walker run, just like before in a local jsct
 >
 > If this is the first time you are running your jac program on this jsserv instance, you will also need to repeat the actions load commands to load the actions. And for any AI models, use their respective `load_model` action to load the trained models.
 
-And viola! Now you are running your jac program in a jaseci server with jsserv.
+
+And voila! Now you are running your jac program in a jaseci server with jsserv.
 The Jaseci server supports a wide range of API endpoints.
 All the `jsctl` commands we have used throughput this tutorial have an equivalent API endpoint, such as `walker_run` and `sentinel_register`.
 As a matter of fact, the entire development journey in this tutorial can be done completely with a remote jaseci server instance.
@@ -308,6 +335,20 @@ To update the global sentinel, run as the admin user
 @jaseci > sentinel set -snt sentinel:tesla_ai_global -mode ir tesla_ai.jir
 ```
 This will update the gloabl sentinel with the updated `jir` code and because this is a global sentinel, any users that have the global sentinel set as their active sentinel will also effectively be running with an updated sentinel.
+
+<hr>
+<hr>
+
+*This caught me out more than anything. Eventually (with help) I worked out I needed to:
+
+- Load the requirements as the logged in user (as opposed to in the terminal running jsserv)
+- Register the sentinels as the logged in user
+- Rename (prefix) the walkers in the bi_enc and tfm_ner files 
+- Preload the models by calling the walkers directly, not via the jac
+
+<hr>
+<hr>
+
 
 ## Manage Graphs
 Now that we have the global sentinel set up, it's time to discuss the management of graphs in a production environment.
