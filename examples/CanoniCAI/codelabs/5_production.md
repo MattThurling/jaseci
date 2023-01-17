@@ -405,6 +405,14 @@ It also coverts the response text to speech and speak it back.
 Here is a screenshot of the UI. You can click on the microphone button to talk to it or use the textbox below for a text input.
 ![](../images/web_ui.png)
 
+<hr>
+<hr>
+
+*There was no local server to run this and when running from a file the browser didn't save the authorisation for use of the mic so you had to do it every time. I ended up writing a Vue.js app (which I would be happy to contribute)*
+
+<hr>
+<hr>
+
 The web frontend communciates with the Jaseci backend via HTTP requests.
 Here is the relevant code where the frontend makes a POST request to the `/js/walker_run` API to run the `talk` walker to ask a question.
 ```js
